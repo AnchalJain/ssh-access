@@ -12,26 +12,26 @@ $ ./ansible.sh
 
 add new user and grant SSH access:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=grant" playbooks/ssh.yml
+$ ansible-playbook -i inventory/ -e "action=grant" ssh.yml
 ```
 
 grant SSH access to an existing user:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=grant" playbooks/ssh.yml --skip-tags=add
+$ ansible-playbook -i inventory/ -e "action=grant" ssh.yml --skip-tags=add
 ```
 
 revoke SSH access from a user:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=revoke" playbooks/ssh.yml --skip-tags=remove
+$ ansible-playbook -i inventory/ -e "action=revoke" ssh.yml --skip-tags=remove
 ```
 
 remove user, hence revoke SSH access as well:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=revoke" playbooks/ssh.yml
+$ ansible-playbook -i inventory/ -e "action=revoke" ssh.yml
 ```
 
 ## Notes
  - Under [instances] group in inventory/hosts files please add IPs or DNS of target instances.
  - Update the varibale "user_name" as per requirements.
- - Please create a directory under "sshkeys" directory of same name as user name and put its SSH pub key under it.
- - I have tested this on AWS instances as target instances so I have used ubuntu. Please update the user in "ssh.yml" who has access to target servers and the machine from where you will run Ansible.
+ - Please create a directory under "roles/ssh-access/files/pubkeys" directory of same name as user name and put its SSH pub key under it.
+ - I have tested this on AWS instances as target instances so I have used ubuntu. Please update the user in "ansible.cfg" who has access to target servers and the machine from where you will run Ansible.
