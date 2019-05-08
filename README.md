@@ -1,9 +1,9 @@
-# Use below command if the ansible is not setup on the base machine 
-$ chmod +x ansible.sh
-$ ./ansible.sh
-
 # ssh-access
 Grant/Revoke SSH access to a group of instances to a user
+
+### Use below command if the ansible is not setup on the base machine 
+$ chmod +x ansible.sh
+$ ./ansible.sh
 
 ### Use below given command to add new user and grant SSH access
 ansible-playbook -i inventory/ -e "action=grant" playbooks/ssh.yml
