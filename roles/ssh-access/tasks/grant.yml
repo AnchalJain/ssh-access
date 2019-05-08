@@ -3,7 +3,6 @@
 - name: Add a new user
   user:
     name: "{{ user_name }}"
-    comment: "{{ user_des }}"
     shell: /bin/bash
   tags:
     - add
