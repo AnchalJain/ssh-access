@@ -12,22 +12,22 @@ $ ./ansible.sh
 
 add new user and grant SSH access:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=grant" playbooks/ssh.yml
+$ ansible-playbook -i inventory/ -e "action=grant" ssh.yml
 ```
 
 grant SSH access to an existing user:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=grant" playbooks/ssh.yml --skip-tags=add
+$ ansible-playbook -i inventory/ -e "action=grant" ssh.yml --skip-tags=add
 ```
 
 revoke SSH access from a user:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=revoke" playbooks/ssh.yml --skip-tags=remove
+$ ansible-playbook -i inventory/ -e "action=revoke" ssh.yml --skip-tags=remove
 ```
 
 remove user, hence revoke SSH access as well:
 ```bash
-$ ansible-playbook -i inventory/ -e "action=revoke" playbooks/ssh.yml
+$ ansible-playbook -i inventory/ -e "action=revoke" ssh.yml
 ```
 
 ## Notes
